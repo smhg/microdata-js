@@ -20,9 +20,10 @@ microdata.parse('http://www.page.com', function(result) {
 ```
 
 ## TODO
+* parse more schema.org elements (e.g. time values)
 * give meaning to itemprop values (Date, interval, Number)
 * stream like sax.js
-* map itemtype values to something useful (other than url)
+* optionally map itemtype values to something useful (other than url)
 
 ## License 
 
