@@ -5,10 +5,23 @@
 
   Tests based on tests in microdatajs by Philip Jägenstedt.
 
+## Installation
+
+Add this repository to your package.json:
+```json
+{
+	// ...
+	"dependencies": {
+		"microdata": "git://github.com/samhauglustaine/node-microdata.git"
+	}
+	// ...
+}
+```
+
 ## Usage
 
 ```javascript
-var microdata = require('./lib/microdata');
+var microdata = require('microdata');
 
 // passing html string
 var result = microdata.parse('<html>...</html>');
