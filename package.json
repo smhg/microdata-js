@@ -1,0 +1,20 @@
+{
+  "name": "microdata",
+  "version": "0.0.1",
+  "description": "microdata",
+  "keywords": ["microdata"],
+  "author": "Sam Hauglustaine <sam@strictlyphp.com>",
+  "dependencies": {
+    "underscore": "*",
+    "cheerio": "git://github.com/samhauglustaine/cheerio.git"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "colors": "*"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "main": "index",
+  "repository": "git://github.com/samhauglustaine/node-microdata.git"
+}

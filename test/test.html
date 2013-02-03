@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>jQuery Microdata Test Suite</title>
+<meta charset="utf-8">
+<script src="qunit/qunit/qunit.js"></script>
+<link rel="stylesheet" href="qunit/qunit/qunit.css">
+<script src="../lib/jquery-1.6.4.min.js"></script>
+<script src="../lib/json2.js"></script>
+<script src="../jquery.microdata.js"></script>
+<script src="../jquery.microdata.json.js"></script>
+<style>#testdata{display:none;}</style>
+</head>
+<body>
+  <h1 id="qunit-header">jQuery Microdata Test Suite</h1>
+  <h2 id="qunit-banner"></h2>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="testdata">
+    <div id="w" itemscope itemtype="http://n.whatwg.org/work">
+      <a id="w0" itemprop="work" href="http://janjan.org/"></a>
+      <div>
+        <p id="w1" itemprop="title">MicrodataJS</p>
+        <p id="w2" itemprop="author">Philip Jägenstedt</p>
+        <a id="w3" itemprop="license" href="http://strictlyphp.org/licenses/by/3.0/"></a>
+      </div>
+      <div id="w" itemscope itemtype="http://n.mimi.org/recipe">
+        <a id="w0" itemprop="work" href="http://foolip.org/microdatajs/"></a>
+        <p id="w1" itemprop="title">LOL</p>
+        <p id="w2" itemprop="author">Sam Toch</p>
+        <a id="w3" itemprop="license" href="http://creativecommons.org/licenses/by/3.0/"></a>
+      </div>
+    </div>
+
+    <div id="x" itemscope itemtype="http://n.whatwg.org/work http://n.foolip.org/work" itemref="x0 w3 noexist w2">
+      <img id="x0" itemprop="work" src="http://blog.foolip.org/">
+      <p id="x1" itemprop="title">Pretentious Nonsense</p>
+    </div>
+
+    <div id="dupref" itemscope itemref="w1 w1"></div>
+
+    <div id="loops" itemscope>
+      <div id="loop0" itemprop="self" itemscope itemref="loop0"></div>
+      <div id="loop1" itemprop="head" itemscope itemref="loop2">not in the loop</div>
+      <div id="loop2" itemprop="first" itemscope itemref="loop3"></div>
+      <div id="loop3" itemprop="last" itemscope itemref="loop2"></div>
+    </div>
+
+    <div id="io"> <!-- inside-out -->
+      <div id="ioBefore" itemprop="oddstuff">via parent</div>
+      <div id="ioItem" itemscope itemref="io">
+	<div id="ioChild" itemprop="oddstuff">via tree</div>
+      </div>
+      <div id="ioAfter" itemprop="oddstuff">via parent</div>
+    </div>
+  </div>
+
+  <div id="dupprops" itemscope>
+    <div id="foo0" itemprop="foo"></div>
+    <div id="bar0" itemprop="bar"></div>
+    <div id="bar1" itemprop="bar"></div>
+    <div id="foo1" itemprop="foo"></div>
+  </div>
+
+  <div id="noprops" itemscope>
+    <div itemprop=""></div>
+  </div>
+
+  <script src="jquery.microdata.unit.js"></script>
+</body>
+</html>
