@@ -1,11 +1,11 @@
 
 # microdata
 
-  Microdata parser.
+  [schema.org](http://schema.org/) microdata parser for node.js.
 
-  Tests based on tests in microdatajs by Philip Jägenstedt
+  Tests based on tests in microdatajs by Philip Jägenstedt.
 
-# Usage
+## Usage
 
 ```javascript
 var microdata = require('./lib/microdata');
@@ -19,7 +19,7 @@ microdata.parse('http://www.page.com', function(result) {
 });
 ```
 
-# TODO
+## TODO
 * give meaning to itemprop values (Date, interval, Number)
 * stream like sax.js
 * map itemtype values to something useful (other than url)
