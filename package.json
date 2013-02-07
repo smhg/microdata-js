@@ -6,7 +6,7 @@
   "author": "Sam Hauglustaine <sam@strictlyphp.com>",
   "dependencies": {
     "underscore": "*",
-    "cheerio": "git://github.com/samhauglustaine/cheerio.git"
+    "cheerio": "git://github.com/smhg/cheerio.git"
   },
   "devDependencies": {
     "mocha": "*",
@@ -16,5 +16,5 @@
     "test": "mocha"
   },
   "main": "index",
-  "repository": "git://github.com/samhauglustaine/node-microdata.git"
+  "repository": "git://github.com/smhg/node-microdata.git"
 }
