@@ -1,4 +1,3 @@
-
 # microdata
 
   [schema.org](http://schema.org/) microdata parser for node.js.
@@ -33,6 +32,7 @@ microdata.parse('http://www.page.com', function(result) {
 ```
 
 ## TODO
+* return promise with Q
 * parse more schema.org elements (e.g. time values)
 * give meaning to itemprop values (Date, interval, Number)
 * stream like sax.js
