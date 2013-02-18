@@ -11,7 +11,7 @@ Add this repository to your package.json:
 {
 	// ...
 	"dependencies": {
-		"microdata": "git://github.com/samhauglustaine/node-microdata.git"
+		"microdata": "git://github.com/smhg/node-microdata.git"
 	}
 	// ...
 }
