@@ -1,5 +1,5 @@
 /*jshint node: true*/
-/*global describe,it*/
+/*global describe,before,it*/
 'use strict';
 
 var microdata = require('../lib/microdata'),
@@ -8,22 +8,43 @@ var microdata = require('../lib/microdata'),
   fs = require('fs');
 
 describe('microdata', function () {
-  var filePath = [__dirname, 'test.html'].join('/'),
-    data = fs.readFileSync(filePath, 'utf8');
+  var html;
+
+  before(function (done) {
+    var filePath = [__dirname, 'test.html'].join('/');
+    fs.readFile(filePath, 'utf8', function (err, data) {
+      html = data;
+      done(err);
+    });
+  });
 
   describe('#parse()', function () {
-    it('should return an empty array when no data is passed', function () {
-      assert.equal(microdata.parse().length, 0);
+    it('should throw an error when no data is passed', function (done) {
+      try {
+        microdata.parse();
+      } catch (err) {
+        done();
+        return;
+      }
+      throw new Error('passed without error');
     });
     describe('with test.html', function () {
       it('should return 2 items and one child', function () {
-        var result = microdata.parse(data);
+        var result = microdata.parse(html);
         assert.equal(result.length, 2);
         assert.equal(result[0].children.length, 1);
       });
       it('should have a title property on the first child', function () {
-        var result = microdata.parse(data);
+        var result = microdata.parse(html);
         assert(_.has(result[0].itemprop, 'title'));
+      });
+    });
+    describe('with https://github.com/isaacs/npm', function () {
+      it('should have at least one item', function (done) {
+        var result = microdata.parse('https://github.com/isaacs/npm', function (data) {
+          assert(data.length > 0);
+          done();
+        });
       });
     });
   });
