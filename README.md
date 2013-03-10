@@ -6,15 +6,8 @@
 
 ## Installation
 
-Add this repository to your package.json:
-```json
-{
-	// ...
-	"dependencies": {
-		"microdata": "git://github.com/smhg/node-microdata.git"
-	}
-	// ...
-}
+```
+npm install microdata
 ```
 
 ## Usage
@@ -22,11 +15,11 @@ Add this repository to your package.json:
 ```javascript
 var microdata = require('microdata');
 
-// passing html string
-var result = microdata.parse('<html>...</html>');
+// parse html string
+var result = microdata.parse('<html><!-- ... --></html>');
 
-// passing url with callback
-microdata.parse('http://www.page.com', function(result) {
+// parse url with callback
+microdata.parse('http://www.something.tld', function(result) {
 	// ...
 });
 ```
