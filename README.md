@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/smhg/node-microdata.png?branch=master)](https://travis-ci.org/smhg/node-microdata)
 # microdata
 
-  [schema.org](http://schema.org/) microdata parser for node.js.
+  [schema.org](http://schema.org/) microdata parser.
 
   Tests based on tests in microdatajs by Philip Jägenstedt.
 
