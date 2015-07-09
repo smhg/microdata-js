@@ -12,11 +12,13 @@
     "request": "2.58.0"
   },
   "devDependencies": {
-    "jshint": "^2.8.0",
+    "babel-eslint": "^3.1.23",
+    "eslint": "^0.24.0",
     "mocha": "^2.2.5"
   },
   "scripts": {
-    "test": "jshint index.js lib/*.js test/*.test.js && mocha"
+    "lint": "eslint index.js lib/*.js test/*.test.js",
+    "test": "mocha"
   },
   "main": "index",
   "repository": "git://github.com/smhg/node-microdata.git",
