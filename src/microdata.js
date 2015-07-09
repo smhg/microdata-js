@@ -1,18 +1,7 @@
 import cheerio from 'cheerio';
-import url from 'url';
 import util from 'util';
-import http from 'http';
-import https from 'https';
 
 export function parse(data, callback) {
-  var tmp;
-
-  try {
-    tmp = url.parse(data);
-  } catch (err) {
-    throw new Error('no data or url specified');
-  }
-
   function parseString(str) {
     var $ = cheerio.load(str, {
         ignoreWhitespace: true,
@@ -86,35 +75,11 @@ export function parse(data, callback) {
     return parseLevel($);
   }
 
-  if (tmp.protocol && tmp.host && tmp.hostname) {
-    // data is url
-    if (!callback) {
-      throw new Error('no callback specified');
-    }
+  var result = parseString(data);
 
-    (tmp.protocol === 'https:' ? https : http).get(tmp, function (res) {
-      var content;
-
-      res.setEncoding('utf8');
-
-      res.on('data', function(chunk) {
-          content += chunk;
-        }).on('end', function () {
-          callback(parseString(content));
-        });
-    }).on('error', function (err) {
-      console.log(err);
-    });
-
-    return undefined;
-  } else {
-    // data is html
-    var result = parseString(data);
-
-    if (callback) {
-      callback(result);
-    }
-
-    return result;
+  if (callback) {
+    callback(result);
   }
+
+  return result;
 }

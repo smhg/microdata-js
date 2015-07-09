@@ -14,22 +14,14 @@ npm install @smhg/microdata
 ## Usage
 
 ```javascript
-var microdata = require('microdata');
+import {parse} from 'microdata';
 
-// parse html string
-var result = microdata.parse('<html><!-- ... --></html>');
-
-// parse url with callback
-microdata.parse('http://www.something.tld', function(result) {
-	// ...
-});
-```
+let microdata = parse('<html><!-- ... --></html>');
 
 ## TODO
-* return promise with Q
+* cli interface
 * parse more schema.org elements (e.g. time values)
 * give meaning to itemprop values (Date, interval, Number)
-* stream like sax.js
 * optionally map itemtype values to something useful (other than url)
 
 ## License 

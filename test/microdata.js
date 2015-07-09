@@ -23,6 +23,7 @@ describe('microdata', function () {
       }
       throw new Error('passed without error');
     });
+
     describe('with test.html', function () {
       it('should return 2 items and one child', function () {
         var result = parse(html);
@@ -32,18 +33,6 @@ describe('microdata', function () {
       it('should have a title property on the first child', function () {
         var result = parse(html);
         assert('title' in result[0].itemprop);
-      });
-    });
-    describe('with https://github.com/npm/npm', function () {
-      it('should have at least one item', function (done) {
-        this.timeout(5000);
-
-        assert.doesNotThrow(function () {
-          parse('https://github.com/npm/npm', function (data) {
-            assert(data.length > 0);
-            done();
-          });
-        });
       });
     });
   });
