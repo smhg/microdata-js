@@ -1,4 +1,4 @@
-var microdata = require('../lib/microdata'),
+var microdata = require('../src/microdata'),
   assert = require('assert'),
   fs = require('fs');
 
