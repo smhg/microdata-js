@@ -3,10 +3,10 @@ import assert from 'assert';
 import fs from 'fs';
 
 describe('microdata', function () {
-  var html;
+  let html;
 
   before(function (done) {
-    var filePath = [__dirname, 'test.html'].join('/');
+    let filePath = [__dirname, 'test.html'].join('/');
     fs.readFile(filePath, 'utf8', function (err, data) {
       html = data;
       done(err);
@@ -26,12 +26,12 @@ describe('microdata', function () {
 
     describe('with test.html', function () {
       it('should return 2 items and one child', function () {
-        var result = parse(html);
+        let result = parse(html);
         assert(result.length === 2);
         assert(result[0].children.length === 1);
       });
       it('should have a title property on the first child', function () {
-        var result = parse(html);
+        let result = parse(html);
         assert('title' in result[0].itemprop);
       });
     });

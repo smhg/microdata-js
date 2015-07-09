@@ -16,6 +16,7 @@ npm install @smhg/microdata
 import {parse} from 'microdata';
 
 let microdata = parse('<html><!-- ... --></html>');
+```
 
 ## TODO
 * cli interface
