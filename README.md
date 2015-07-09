@@ -8,7 +8,7 @@
 ## Installation
 
 ```
-npm install git://github.com/smhg/node-microdata.git
+npm install @smhg/microdata
 ```
 
 ## Usage

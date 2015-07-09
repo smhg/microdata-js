@@ -1,5 +1,5 @@
 {
-  "name": "microdata",
+  "name": "@smhg/microdata",
   "version": "0.1.0",
   "description": "Schema.org microdata parser",
   "keywords": [
@@ -20,9 +20,5 @@
   },
   "main": "index",
   "repository": "git://github.com/smhg/node-microdata.git",
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "license": "MIT"
 }
