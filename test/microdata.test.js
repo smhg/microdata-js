@@ -1,7 +1,3 @@
-/*jshint node: true*/
-/*global describe,before,it*/
-'use strict';
-
 var microdata = require('../lib/microdata'),
   assert = require('assert'),
   fs = require('fs');

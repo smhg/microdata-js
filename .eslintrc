@@ -4,6 +4,7 @@
     "node": true
   },
   "rules": {
-    "quotes": [1, "single"]
+    "quotes": [1, "single"],
+    "strict": [2, "never"]
   }
 }
