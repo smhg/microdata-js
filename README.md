@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/smhg/node-microdata.png?branch=master)](https://travis-ci.org/smhg/node-microdata)
-# microdata
+# microdata [![Build Status](https://travis-ci.org/smhg/microdata-js.png?branch=master)](https://travis-ci.org/smhg/microdata-js)
 
   [schema.org](http://schema.org/) microdata parser.
 

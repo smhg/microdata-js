@@ -22,6 +22,6 @@
     "test": "npm run prepublish && babel-node -r node_modules/.bin/_mocha test"
   },
   "main": "dist/microdata.js",
-  "repository": "git://github.com/smhg/node-microdata.git",
+  "repository": "git://github.com/smhg/microdata-js.git",
   "license": "MIT"
 }
