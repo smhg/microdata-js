@@ -35,6 +35,7 @@ function parse(data, callback) {
         $(propSelector, $(this).html()).each(function () {
           var propName = $(this).attr('itemprop'),
               value;
+
           switch ($(this)[0].name) {
             case 'audio':
             case 'embed':
@@ -57,9 +58,11 @@ function parse(data, callback) {
               value = $(this).html().trim();
               break;
           }
+
           if (value) {
             if (propName in props) {
               var currentValue = props[propName];
+
               if (_util2['default'].isArray(currentValue)) {
                 props[propName].push(value);
               } else {
@@ -74,8 +77,9 @@ function parse(data, callback) {
         var dummy = {
           'itemtype': itemType,
           'itemprop': props
-        };
-        var children = parseLevel($(this));
+        },
+            children = parseLevel($(this));
+
         if (children.length > 0) {
           dummy.children = children;
         }

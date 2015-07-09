@@ -21,31 +21,34 @@ export function parse(data, callback) {
         $(propSelector, $(this).html()).each(function () {
           var propName = $(this).attr('itemprop'),
             value;
+
           switch ($(this)[0].name) {
-          case 'audio':
-          case 'embed':
-          case 'iframe':
-          case 'img':
-          case 'source':
-          case 'track':
-          case 'video':
-            value = $(this).attr('src');
-            break;
-          case 'a':
-          case 'area':
-          case 'link':
-            value = $(this).attr('href');
-            break;
-          case 'object':
-            value = $(this).attr('data');
-            break;
-          default:
-            value = $(this).html().trim();
-            break;
+            case 'audio':
+            case 'embed':
+            case 'iframe':
+            case 'img':
+            case 'source':
+            case 'track':
+            case 'video':
+              value = $(this).attr('src');
+              break;
+            case 'a':
+            case 'area':
+            case 'link':
+              value = $(this).attr('href');
+              break;
+            case 'object':
+              value = $(this).attr('data');
+              break;
+            default:
+              value = $(this).html().trim();
+              break;
           }
+
           if (value) {
             if (propName in props) {
               var currentValue = props[propName];
+
               if (util.isArray(currentValue)) {
                 props[propName].push(value);
               } else {
@@ -58,10 +61,11 @@ export function parse(data, callback) {
         });
 
         var dummy = {
-          'itemtype': itemType,
-          'itemprop': props
-        };
-        var children = parseLevel($(this));
+            'itemtype': itemType,
+            'itemprop': props
+          },
+          children = parseLevel($(this));
+
         if (children.length > 0) {
           dummy.children = children;
         }
