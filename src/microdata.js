@@ -1,10 +1,10 @@
-var cheerio = require('cheerio'),
-  url = require('url'),
-  util = require('util'),
-  http = require('http'),
-  https = require('https');
+import cheerio from 'cheerio';
+import url from 'url';
+import util from 'util';
+import http from 'http';
+import https from 'https';
 
-module.exports.parse = function (data, callback) {
+export function parse(data, callback) {
   var tmp;
 
   try {
@@ -117,4 +117,4 @@ module.exports.parse = function (data, callback) {
 
     return result;
   }
-};
+}
